@@ -472,7 +472,7 @@ ganador2:
 dibujarX:
 
     # Las dibuja en color blanco
-    li $t0, 0xFFFFFF
+    li $t0, 0xFF0000
     
     beq $a2, 1, x_uno
 
@@ -666,7 +666,7 @@ dibujarX:
 ## Dibujar O (Ficha del jugador 2)
 dibujarO:
 				
-    li $t0, 0xFFFFFF
+    li $t0, 0x00FF00
 
     beq $a2, 1, o_uno
 
