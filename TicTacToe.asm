@@ -1016,38 +1016,38 @@ dibujarTablero:
     li $t0 0xffffff
     li $t1 40
 
-primeraColumna:
-	sw $t0 display($t1)
-	
-	addi $t1 $t1 128
-	
-	ble $t1 4096 primeraColumna
+    primeraColumna:
+        sw $t0 display($t1)
+        
+        addi $t1 $t1 128
+        
+        ble $t1 4096 primeraColumna
 
-		
-li $t1 84
-segundaColumna:
-	sw $t0 display($t1)
-	
-	addi $t1 $t1 128
-	
-	ble $t1 4096 segundaColumna
-	
-li $t1 1280
-primeraFila:
-	sw $t0 display($t1)
-	
-	addi $t1 $t1 4
-	
-	ble $t1 1407 primeraFila
+            
+    li $t1 84
+    segundaColumna:
+        sw $t0 display($t1)
+        
+        addi $t1 $t1 128
+        
+        ble $t1 4096 segundaColumna
+        
+    li $t1 1280
+    primeraFila:
+        sw $t0 display($t1)
+        
+        addi $t1 $t1 4
+        
+        ble $t1 1407 primeraFila
 
-li $t1 2688
-segundaFila:
-	sw $t0 display($t1)
-	
-	addi $t1 $t1 4
-	
-	ble $t1 2815 segundaFila
-        jr $ra
+    li $t1 2688
+    segundaFila:
+        sw $t0 display($t1)
+        
+        addi $t1 $t1 4
+        
+        ble $t1 2815 segundaFila
+            jr $ra
 
 salir:
     li $v0 10
