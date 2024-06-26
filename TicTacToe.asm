@@ -166,7 +166,8 @@ tableroLleno:
 	jr $ra
 	
     sinJugadas:
-        li $v0, 4
+        li $a1, 0
+        li $v0, 55
         la $a0, empate
         syscall
         
