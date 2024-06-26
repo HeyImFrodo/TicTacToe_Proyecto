@@ -15,92 +15,92 @@ main:
 
 	jal dibujarTablero
 
-jugador1:
-	# Solicitar un numero
-	li $v0, 4
-	la $a0, jugador1_msg
-	syscall
-	
-	# Registra la jugada
-	li $v0, 5
-	syscall
-	move $a0, $v0
+    jugador1:
+        # Solicitar un numero
+        li $v0, 4
+        la $a0, jugador1_msg
+        syscall
+        
+        # Registra la jugada
+        li $v0, 5
+        syscall
+        move $a0, $v0
 
-	move $s2, $v0
-	
-	# Revisa si el numero es valido
-	jal validacion
+        move $s2, $v0
+        
+        # Revisa si el numero es valido
+        jal validacion
 
-	beq $v0, 1, jugadaValidada1
+        beq $v0, 1, jugadaValidada1
 
-	# Si no es valida se vuelve a preguntar
-	li $v0, 4
-	la $a0, invalida
-	syscall
-	j jugador1
-	
-    # Si es valida se guarda y se dibuja en el bitmap display
-    jugadaValidada1:
-        li $a0, 1
+        # Si no es valida se vuelve a preguntar
+        li $v0, 4
+        la $a0, invalida
+        syscall
+        j jugador1
+        
+        # Si es valida se guarda y se dibuja en el bitmap display
+        jugadaValidada1:
+            li $a0, 1
+            jal registrar
+
+            move $a2, $s2
+            jal dibujarX
+            
+            li $v1, 0
+
+            # Revisa si el jugador 1 gano
+            jal ganador1
+            beq $v1, 1, salir
+            
+            # Revisa si el tablero esta lleno
+            jal tableroLleno
+            beq $v1, 1, salir
+
+    jugador2:
+        # Solicitar un numero
+        li $v0, 4
+        la $a0, jugador2_msg 
+        syscall
+        
+        # Registra la jugada
+        li $v0, 5
+        syscall
+        move $a0, $v0
+
+        move $s3, $v0
+
+        # Revisa si el numero el valido
+        jal validacion
+
+        beq $v0, 1, jugadaValidada2
+        
+        # Si no es valida se vuelve a preguntar
+        li $v0, 4
+        la $a0, invalida
+        syscall
+        j jugador2
+        
+        # Si es valida se guarda y se dibuja en el bitmap display
+        jugadaValidada2:
+        li $a0, 2
         jal registrar
-
-        move $a2, $s2
-        jal dibujarX
+        
+        move $a2, $s3
+        jal dibujarO
         
         li $v1, 0
 
-        # Revisa si el jugador 1 gano
-        jal ganador1
+        # Revisa si el jugador 2 gano
+        jal ganador2
         beq $v1, 1, salir
-        
+
         # Revisa si el tablero esta lleno
         jal tableroLleno
+        
         beq $v1, 1, salir
-
-jugador2:
-	# Solicitar un numero
-	li $v0, 4
-	la $a0, jugador2_msg 
-	syscall
-	
-	# Registra la jugada
-	li $v0, 5
-	syscall
-	move $a0, $v0
-
-	move $s3, $v0
-
-    # Revisa si el numero el valido
-	jal validacion
-
-	beq $v0, 1, jugadaValidada2
-	
-    # Si no es valida se vuelve a preguntar
-	li $v0, 4
-	la $a0, invalida
-	syscall
-	j jugador2
-	
-    # Si es valida se guarda y se dibuja en el bitmap display
-    jugadaValidada2:
-	li $a0, 2
-	jal registrar
-	
-	move $a2, $s3
-	jal dibujarO
-	
-	li $v1, 0
-
-    # Revisa si el jugador 2 gano
-	jal ganador2
-	beq $v1, 1, salir
-
-    # Revisa si el tablero esta lleno
-	jal tableroLleno
-	
-	beq $v1, 1, salir
-	
-	j jugador1
+        
+        j jugador1
 	
 validacion:
 	# Si numero >= 1
