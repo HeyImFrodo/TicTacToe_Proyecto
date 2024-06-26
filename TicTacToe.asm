@@ -322,7 +322,6 @@ ganador1:
         jr $ra
 
 ## Comprobar si gano el jugador 2
-
 ganador2:
     # Verifica si el jugador 2 gano en las filas (horizontales)
 	la $t0, valores
