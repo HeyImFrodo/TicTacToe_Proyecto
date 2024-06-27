@@ -14,7 +14,7 @@ Instrucciones para ejecutar el programa
 
    Base address for display: 0x10010000 (static data)
 
-3. Compilar y correr el programa normalmente.
+3. Compilar y correr el programa en MARS normalmente.
 
 4. Ingresar números válidos en la consola. Números válidos: 1 - 9
 
