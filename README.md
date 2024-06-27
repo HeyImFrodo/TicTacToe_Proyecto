@@ -20,5 +20,7 @@ Ingresar números hasta llenar las 9 casillas o hasta ingresar 9 números válid
 La lógica para marcar casillas en el tablero es la siguiente:
 
   || 1 || 2 || 3 ||
+  
   || 4 || 5 || 6 ||
+  
   || 7 || 8 || 9 ||
