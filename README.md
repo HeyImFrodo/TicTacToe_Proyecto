@@ -20,8 +20,8 @@ Instrucciones para ejecutar el programa
 
 5. La lógica para marcar casillas en el tablero es la siguiente:
 
-  || 1 || 2 || 3 ||
-  
-  || 4 || 5 || 6 ||
-  
-  || 7 || 8 || 9 ||
+      || 1 || 2 || 3 ||
+
+      || 4 || 5 || 6 ||
+
+      || 7 || 8 || 9 ||
