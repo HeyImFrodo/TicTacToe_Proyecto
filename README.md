@@ -12,13 +12,13 @@ Instrucciones para ejecutar el programa
 
    Base address for display: 0x10010000 (static data)
 
-Compilar y correr el programa normalmente.
+2. Compilar y correr el programa normalmente.
 
-Ingresar números válidos en la consola. Números válidos: 1 - 9
+3. Ingresar números válidos en la consola. Números válidos: 1 - 9
 
-Ingresar números hasta llenar las 9 casillas o hasta ingresar 9 números válidos
+4. Ingresar números hasta llenar las 9 casillas o hasta ingresar 9 números válidos
 
-La lógica para marcar casillas en el tablero es la siguiente:
+5. La lógica para marcar casillas en el tablero es la siguiente:
 
   || 1 || 2 || 3 ||
   
