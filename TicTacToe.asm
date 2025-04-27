@@ -1052,3 +1052,6 @@ dibujarTablero:
 salir:
     li $v0 10
     syscall
+
+
+# hola
